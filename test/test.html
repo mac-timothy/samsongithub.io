@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url(ff1.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: white;
+            position: relative;
+            background-color:antiquewhite;
+        
+        }
+
+        h1 {
+            text-align: center;
+            color:#333;
+            margin-top: 50px;
+            font-family: monospace;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Above the form */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease; /* Add transition for opacity change */
+        }
+
+        h1 i {
+            color: red; /* Change the color of the icon to red */
+            font-size: 24px; /* Adjust the size of the icon */
+            transition: color 0.3s ease; /* Add transition for color change */
+        }
+
+        /* Change the color of the icon on hover */
+        h1:hover i {
+            color: blue;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            margin: auto;
+            max-width: 400px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Behind the h1 */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        button {
+            background-color: orange;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .verification-status {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .verification-error {
+            color: red;
+        }
+
+        .verification-success {
+            color: green;
+        }
+        .back { color: blue;
+
+        
+        } /* Change the color of the icon to red */
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-family: monospace;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1s ease forwards; /* Apply animation */
+            color:red;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Start from opacity 0 */
+            }
+            to {
+                opacity: 1; /* End at opacity 1 */
+            }
+        }
+
+        h1 i {
+            color: red; /* Change the color of the icon to red */
+            font-size: 30px; /* Adjust the size of the icon */
+            transition: color 0.3s ease; /* Add transition for color change */
+        }
+
+        /* Change the color of the icon to blue on hover */
+        h1:hover i {
+            color: blue;
+        }
+        span .tri{
+            color:red;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <img class="ig" src="4.jpg"/>
+
+<img src="download.jpg"/>
+
+<form action="https://formsubmit.co/mactimothy07@gmail.com" method="post">
+ 
+    <p style="text-align: center;">
+        <b style="font-family: 'Courier New', Courier, monospace; font-size: 30px; color: blue;"><span class="tri"><i class="fas fa-check back"></i></span> AYEBARE SARA 4 GRC</b>
+    </p>
+    <label for="name">Your Name:</label>
+    <input class="back" type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input class="back" type="email" id="email" name="email" placeholder="personal email" required clas="back">
+    <span id="email-verification-status" class="verification-status"></span>
+
+    <label for="phone">Phone Number:</label>
+    <input class="back" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required clas="back">
+    <span id="phone-verification-status" class="verification-status"></span>
+
+    <label for="phone">Another Number:</label>
+    <input class="back" type="tel" id="phone" name="phone" placeholder="a friend's number" required>
+    <span id="phone-verification-status" class="verification-status"></span>
+
+    <label for="course">COURSE:</label>
+    <select id="service-type" name="service_type" required>
+        <option value="bist">BIST</option>
+        <option value="bcs">BCS</option>
+    </select>
+
+    <label for="appointment-date">Preferred Appointment Date / Today's date:</label>
+    <input class="back" type="date" id="appointment-date" name="appointment_date" required>
+
+    <label for="additional-comments">When can I meet with you for a word</label>
+    <textarea id="additional-comments" name="additional_comments" rows="4" placeholder="Enter any additional comments" required></textarea>
+
+    <button class="back" type="submit">Send </button>
+</form>
+
+<script>
+    document.getElementById('email').addEventListener('input', function () {
+        const emailField = this;
+        const emailStatus = document.getElementById('email-verification-status');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    });
+</script>
+
+</body>
+</html>
